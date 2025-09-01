@@ -52,8 +52,6 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-
-
 // Sunucu oluşturma ve proje aktivitesi sağlama.
 const express = require('express');
 const app = express();
@@ -69,4 +67,5 @@ app.listen(port, () => {
 });
 
 client.login(process.env.token)
+
 
