@@ -1,3 +1,4 @@
+
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
@@ -51,4 +52,21 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
+
 client.login(token);
+
+// Sunucu oluşturma ve proje aktivitesi sağlama.
+const express = require('express');
+const app = express();
+const port = 13000;
+
+// Web sunucu
+app.get('/', (req, res) => {
+    res.sendStatus(200);
+});
+
+app.listen(port, () => {
+    console.log('Sunucu ${port} numaralı bağlantı noktasında yürütülüyor.`);
+});
+
+client.login(process.env.token)
